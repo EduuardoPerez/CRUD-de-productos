@@ -20,7 +20,7 @@ const Header = () => (
             to='/nuevo-producto'
             className="nav-link"
             activeClassName="active"
-          >Nuevo productos</NavLink>
+          >Nuevo producto</NavLink>
         </li>
       </ul>
     </div>

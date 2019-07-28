@@ -35,6 +35,24 @@
       "precioPlatillo": "150",
       "categoria": "postre",
       "id": 6
+    },
+    {
+      "nombrePlatillo": "Asado",
+      "precioPlatillo": "400",
+      "categoria": "cortes",
+      "id": 7
+    },
+    {
+      "nombrePlatillo": "Ensalada de pollo",
+      "precioPlatillo": "250",
+      "categoria": "ensalada",
+      "id": 8
+    },
+    {
+      "nombrePlatillo": "Limonada",
+      "precioPlatillo": "50",
+      "categoria": "bebida",
+      "id": 9
     }
   ]
 }
