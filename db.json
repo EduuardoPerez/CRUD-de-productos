@@ -17,6 +17,24 @@
       "precioPlatillo": "100",
       "categoria": "ensalada",
       "id": 3
+    },
+    {
+      "nombrePlatillo": "Bife de chorizo",
+      "precioPlatillo": "500",
+      "categoria": "cortes",
+      "id": 4
+    },
+    {
+      "nombrePlatillo": "Pie de limon",
+      "precioPlatillo": "25",
+      "categoria": "postre",
+      "id": 5
+    },
+    {
+      "nombrePlatillo": "Budin de banana",
+      "precioPlatillo": "150",
+      "categoria": "postre",
+      "id": 6
     }
   ]
 }

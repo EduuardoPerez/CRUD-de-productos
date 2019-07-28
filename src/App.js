@@ -13,7 +13,7 @@ function App() {
   
   useEffect(() => {
     const consultarAPI = async () => {
-      // consultar la API de json-server
+      // consultar la API
       const resultado = await axios.get('http://localhost:4000/restaurant');
 
       guardarProductos(resultado.data);
@@ -26,15 +26,6 @@ function App() {
       <Header/>
       <main className="container mt-5">
       <Switch>
-        {/*
-          Cuando se quiere pasar por prop a un componente que se encuentra una ruta
-          no se realiza de esta manera:
-          
-            <Route exact path="/productos" component={Productos} />
-
-          Sino utilizando render en lugar de component como se ve a continuación
-        */}
-
         <Route exact path="/productos"
           render={() => (
             <Productos
