@@ -33,21 +33,38 @@ function App() {
       <main className="container mt-5">
       <Switch>
         <Route exact path="/productos"
-          render={() => (
-            <Productos
-              productos={productos}
-            />
-          )}
+              render={() => (
+                <Productos
+                  productos={productos}
+                />
+              )}
         />
         <Route exact path="/nuevo-producto" 
-          render={() => (
-            <AgregarProducto 
-              guardarRecargarProductos={guardarRecargarProductos}
-            />
-          )}
+              render={() => (
+                <AgregarProducto 
+                  guardarRecargarProductos={guardarRecargarProductos}
+                />
+              )}
         />
         <Route exact path="/productos/:id" component={Producto} />
-        <Route exact path="/productos/editar/:id" component={EditarProducto} />
+        {/*
+          router-dom genera props (history, location, match) que nos facilitaran
+          realizar tareas del CRUD
+        */}
+        <Route exact path="/productos/editar/:id"
+              render={ props => {
+                // Tomar el ID del producto
+                const idProducto = parseInt(props.match.params.id);
+
+                // El producto que se pasa al state
+                const producto = productos.filter(producto => producto.id===idProducto);
+                return(
+                  <EditarProducto
+                    producto={producto[0]}
+                  />
+                );
+              }}
+        />
       </Switch>
       </main>
       <p className="mt-4 p2 text-center">Todos los derechos reservados</p>
