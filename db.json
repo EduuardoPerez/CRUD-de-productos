@@ -19,20 +19,20 @@
       "id": 3
     },
     {
+      "precioPlatillo": "300",
       "nombrePlatillo": "Bife de chorizo",
-      "precioPlatillo": "500",
       "categoria": "cortes",
       "id": 4
     },
     {
+      "precioPlatillo": "70",
       "nombrePlatillo": "Pie de limon",
-      "precioPlatillo": "25",
       "categoria": "postre",
       "id": 5
     },
     {
+      "precioPlatillo": "100",
       "nombrePlatillo": "Budin de banana",
-      "precioPlatillo": "150",
       "categoria": "postre",
       "id": 6
     },
@@ -49,8 +49,8 @@
       "id": 8
     },
     {
+      "precioPlatillo": "150",
       "nombrePlatillo": "Limonada",
-      "precioPlatillo": "50",
       "categoria": "bebida",
       "id": 9
     }

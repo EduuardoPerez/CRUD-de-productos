@@ -1,8 +1,13 @@
 import React, {useState, useRef} from 'react';
 import Error from './Error';
-import Producto from './Producto';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
 
-function EditarProducto({producto}){
+function EditarProducto(props){
+
+  // Destructurin de props
+  const {history, producto, guardarRecargarProductos} = props;
 
   // Generar los refs
   const precioPlatilloRef = useRef('');
@@ -15,7 +20,7 @@ function EditarProducto({producto}){
     guardarCategoria(e.target.value);
   }
 
-  const editarProducto = e => {
+  const editarProducto = async e => {
     e.preventDefault();
 
     // Revisar si cambio la categria, sino, asignar el mismo valor
@@ -29,6 +34,30 @@ function EditarProducto({producto}){
     }
 
     // Enviar el Request
+    const url = `http://localhost:4000/restaurant/${producto.id}`;
+
+    try {
+      const resultado = await axios.put(url, editarPlatillo);
+
+      if(resultado.status===200){
+        Swal.fire(
+          'Producto editado',
+          'El producto se editó correctamente',
+          'success'
+        )
+      }
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        type: 'error',
+        title: 'Error',
+        text: 'Hubo un error, intentalo nuevamente'
+      });
+    }
+
+    // Redirigir al usuario y consultar API
+    guardarRecargarProductos(true);
+    history.push('/productos');
   }
 
   return(
@@ -123,4 +152,4 @@ function EditarProducto({producto}){
     </div>
   );
 }
-export default EditarProducto;
+export default withRouter(EditarProducto);

@@ -47,10 +47,6 @@ function App() {
               )}
         />
         <Route exact path="/productos/:id" component={Producto} />
-        {/*
-          router-dom genera props (history, location, match) que nos facilitaran
-          realizar tareas del CRUD
-        */}
         <Route exact path="/productos/editar/:id"
               render={ props => {
                 // Tomar el ID del producto
@@ -61,6 +57,7 @@ function App() {
                 return(
                   <EditarProducto
                     producto={producto[0]}
+                    guardarRecargarProductos={guardarRecargarProductos}
                   />
                 );
               }}
