@@ -57,7 +57,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
 
   return(
     <div className="col-md-8 mx-auto ">
-      <h1 className="text-center">Agregar Nuevo Producto</h1>
+      <h1 className="text-center">Agregar nuevo producto</h1>
 
       {(error) ? <Error mensaje='Todos los campos son obligatorios'/> : null}
 
@@ -136,7 +136,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
             </label>
           </div>
         </div>
-        <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Agregar Producto" />
+        <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Agregar producto"/>
       </form>
     </div>
   );
