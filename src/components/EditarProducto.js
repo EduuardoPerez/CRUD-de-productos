@@ -16,7 +16,19 @@ function EditarProducto({producto}){
   }
 
   const editarProducto = e => {
+    e.preventDefault();
 
+    // Revisar si cambio la categria, sino, asignar el mismo valor
+    let categoriaPlatillo = (categoria==='') ? producto.categoria : categoria;
+
+    // Obtener los valores del formulario
+    const editarPlatillo = {
+      precioPlatillo: precioPlatilloRef.current.value,
+      nombrePlatillo: nombrePlatilloRef.current.value,
+      categoria: categoriaPlatillo
+    }
+
+    // Enviar el Request
   }
 
   return(
