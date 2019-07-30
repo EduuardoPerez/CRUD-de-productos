@@ -1,12 +1,46 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
-function ProductoLista({producto}){
+function ProductoLista({producto, guardarRecargarProductos}){
 
   const eliminarProducto = id => {
-    console.log('eliminando', id);
 
-    // Por hacer: Eliminar los registros
+    Swal.fire({
+      title: '¿Está seguro de que desea eliminar el producto?',
+      text: "Luego de eliminado no se podrá recuperar la información",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'No, cancelar'
+    }).then( async (result) => {
+      if (result.value) {
+        try {
+          const url = `http://localhost:4000/restaurant/${id}`;
+          const resultado = await axios.delete(url);
+          
+          if(resultado.status===200){
+            Swal.fire(
+              'Eliminado',
+              'El producto fue eliminado de los registros',
+              'success'
+            )
+            // Consultar la API nuevamente
+            guardarRecargarProductos(true);
+          }
+        } catch (error) {
+          console.log(error);
+          Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Hubo un error, intentalo nuevamente'
+          });
+        }
+      }
+    })
   }
 
   return(
