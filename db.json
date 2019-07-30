@@ -8,13 +8,13 @@
     },
     {
       "precioPlatillo": "300",
-      "nombrePlatillo": "Rib eye 400g",
+      "nombrePlatillo": "Costillas de cerdo",
       "categoria": "cortes",
       "id": 2
     },
     {
+      "precioPlatillo": "200",
       "nombrePlatillo": "Ensalada",
-      "precioPlatillo": "100",
       "categoria": "ensalada",
       "id": 3
     },
@@ -37,8 +37,8 @@
       "id": 6
     },
     {
-      "nombrePlatillo": "Asado",
       "precioPlatillo": "400",
+      "nombrePlatillo": "Asado",
       "categoria": "cortes",
       "id": 7
     },
